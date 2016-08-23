@@ -2,7 +2,6 @@
 
 [![Gitter][gitter-image]][gitter-url]
 
-
 > Simple documentation for @types contributors.
 
 Gitter channel: https://gitter.im/types/Lobby

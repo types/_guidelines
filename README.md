@@ -4,8 +4,6 @@
 
 > Simple documentation for @types contributors.
 
-Gitter channel: https://gitter.im/types/Lobby
-
 ## Repository
 
 If you're creating a repository under `@types`, make sure to follow the existing naming guidelines. That is, `<source>-<lib name>`. The list of sources can be viewed in the [registry](https://github.com/typings/registry#structure).

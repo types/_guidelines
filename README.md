@@ -1,8 +1,8 @@
 # Guidelines
 
-> Simple documentation for @types contributors.
+[![Gitter][gitter-image]][gitter-url]
 
-Gitter channel: https://gitter.im/types/Lobby
+> Simple documentation for @types contributors.
 
 ## Repository
 
@@ -36,3 +36,6 @@ The current practice for typing multiple versions in folders vs branches is unde
 ```
 
 For environmental typings, it also makes sense to enable `noLib` and **only** rely on `lib.core.d.ts`. This enables people to do things like disable browser typings under node.js.
+
+[gitter-image]: https://badges.gitter.im/types/guidelines.svg
+[gitter-url]: https://gitter.im/types/Lobby

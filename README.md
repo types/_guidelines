@@ -10,13 +10,18 @@ If you're creating a repository under `@types`, make sure to follow the existing
 
 ### Structure
 
-1. Make sure you have a descriptive README (at least link to the source repository)
-2. Set up `tsconfig.json` using the minimum settings (see [`tsconfig.json` settings](#tsconfigjson))
-3. Create `package.json` with test suite and dependencies defined (there should be no implicit dependencies)
-4. Make sure the name in `package.json` is `@types/<lib name>` - this allows TypeScript 2.0 users to install using `npm` (E.g. `npm install types/<source>-<lib name>`)
-5. Remember to set up `typings.json -> typings` and `package.json -> typings`
-6. Licenses should be under MIT or similar, remember to add a license to your work
-7. Make sure any typings dependencies are listed in both `package.json` (with `@types`) and `typings.json` (using the Typings registry)
+Using [`npm-quickly-copy-file`](https://github.com/types/npm-quickly-copy-file) as an example, make sure you have the following set up to ease contributing.
+
+1. Make sure you have a descriptive README with, at least, a link to the source repository ([`README.md`](https://github.com/types/npm-quickly-copy-file/blob/master/README.md))
+2. Set up `tsconfig.json` using the minimum required settings (see [`tsconfig.json` settings](#tsconfigjson)) ([`tsconfig.json`](https://github.com/types/npm-quickly-copy-file/blob/master/tsconfig.json))
+3. The work should be licensed under MIT, or similar, to enable redistribution ([`LICENSE`](https://github.com/types/npm-quickly-copy-file/blob/master/LICENSE))
+4. Create a `package.json` with the `@types/<pkg>` name, testing scripts, `typings` field and development dependencies - there should be no implicit dependencies ([`package.json`](https://github.com/types/npm-quickly-copy-file/blob/master/package.json))
+5. Create the `typings.json` version with original package name ([`typings.json`](https://github.com/types/npm-quickly-copy-file/blob/master/typings.json))
+6. I recommend checking in an `.editorconfig` file for people to follow ([`.editorconfig`](https://github.com/types/npm-quickly-copy-file/blob/master/.editorconfig))
+7. Make sure all generated assets are `.gitignore`'d ([`.gitignore`](https://github.com/types/npm-quickly-copy-file/blob/master/.gitignore))
+8. Add the `tslint.json` configuration extending `tslint-config-standard` ([`tslint.json`](https://github.com/types/npm-quickly-copy-file/blob/master/tslint.json))
+9. Write the definition, mirroring the original JavaScript source code with types ([`index.d.ts`](https://github.com/types/npm-quickly-copy-file/blob/master/index.d.ts))
+10. Make sure you include some tests for future contributors ([`test.ts`](https://github.com/types/npm-quickly-copy-file/blob/master/test.ts))
 
 ### Branching Vs Folder Versions
 

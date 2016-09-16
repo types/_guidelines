@@ -22,6 +22,47 @@ Using [`npm-quickly-copy-file`](https://github.com/types/npm-quickly-copy-file) 
 8. Add the `tslint.json` configuration extending `tslint-config-standard` ([`tslint.json`](https://github.com/types/npm-quickly-copy-file/blob/master/tslint.json))
 9. Write the definition, mirroring the original JavaScript source code with types ([`index.d.ts`](https://github.com/types/npm-quickly-copy-file/blob/master/index.d.ts))
 10. Make sure you include some tests for future contributors ([`test.ts`](https://github.com/types/npm-quickly-copy-file/blob/master/test.ts))
+11. Set up `.travis.yml` for CI ([`.travis.yml`](https://github.com/types/npm-quickly-copy-file/blob/master/.travis.yml))
+12. Enable [Greenkeeper](https://greenkeeper.io/) and [Travis CI](http://travis-ci.org/)
+
+### Quickly Enable Travis CI and Greenkeeper
+
+```sh
+gem install travis
+npm install -g greenkeeper
+
+travis enable
+greenkeeper enable
+```
+
+**P.S.** You should have the JavaScript source of the typings as a [`devDependency`](https://github.com/types/npm-quickly-copy-file/blob/c744cbbed03e43f6f3fba890ac677c903c666897/package.json#L30), using the `~` or `1.0.x` version ranges. If Greenkeeper detects a new version, you'll have a chance to review the changes in a Pull Request.
+
+### `.travis.yml`
+
+```yml
+sudo: false
+language: node_js
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+script:
+  - npm run lint
+  - npm run bundle
+  - npm rm tslint
+  - npm install $TYPESCRIPT --force
+  - npm run exec
+
+env:
+  - TYPESCRIPT=typescript@1.8
+  - TYPESCRIPT=typescript@latest
+  - TYPESCRIPT=typescript@next
+
+node_js:
+  - "stable"
+```
 
 ### Branching Vs Folder Versions
 

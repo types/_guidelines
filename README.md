@@ -74,14 +74,15 @@ The current practice for typing multiple versions in folders vs branches is unde
 {
   "compilerOptions": {
     "target": "es5",
+    "lib": ["es2015"],
     "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "strictNullChecks": true
   }
 }
 ```
 
-For environmental typings, it also makes sense to enable `noLib` and **only** rely on `lib.core.d.ts`. This enables people to do things like disable browser typings under node.js.
+For node typings, it also makes sense to use `lib.core.d.ts` only. This enables people to disable browser typings without any issue.
 
 [gitter-image]: https://badges.gitter.im/types/guidelines.svg
 [gitter-url]: https://gitter.im/types/Lobby

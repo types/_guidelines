@@ -15,7 +15,7 @@ Using [`npm-quickly-copy-file`](https://github.com/types/npm-quickly-copy-file) 
 1. Make sure you have a descriptive README with, at least, a link to the source repository ([`README.md`](https://github.com/types/npm-quickly-copy-file/blob/master/README.md))
 2. Set up `tsconfig.json` using the minimum required settings (see [`tsconfig.json` settings](#tsconfigjson)) ([`tsconfig.json`](https://github.com/types/npm-quickly-copy-file/blob/master/tsconfig.json))
 3. The work should be licensed under MIT, or similar, to enable redistribution ([`LICENSE`](https://github.com/types/npm-quickly-copy-file/blob/master/LICENSE))
-4. Create a `package.json` with the `@types/<pkg>` name, testing scripts, `typings` field and development dependencies - there should be no implicit dependencies ([`package.json`](https://github.com/types/npm-quickly-copy-file/blob/master/package.json))
+4. Create a `package.json` with the `@types/<pkg>` name, testing scripts (using `tsc` and `ts-node`), `typings` field and development dependencies - there should be no implicit dependencies ([`package.json`](https://github.com/types/npm-quickly-copy-file/blob/master/package.json))
 5. Create the `typings.json` version with original package name ([`typings.json`](https://github.com/types/npm-quickly-copy-file/blob/master/typings.json))
 6. I recommend checking in an `.editorconfig` file for people to follow ([`.editorconfig`](https://github.com/types/npm-quickly-copy-file/blob/master/.editorconfig))
 7. Make sure all generated assets are `.gitignore`'d ([`.gitignore`](https://github.com/types/npm-quickly-copy-file/blob/master/.gitignore))
@@ -76,6 +76,7 @@ The current practice for typing multiple versions in folders vs branches is unde
     "target": "es5",
     "lib": ["es2015"],
     "module": "commonjs",
+    "noEmit": true,
     "noImplicitAny": true,
     "strictNullChecks": true
   }
